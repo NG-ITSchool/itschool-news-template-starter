@@ -26,7 +26,7 @@ export const getNewsDetails = apiResponse => {
   const adaptedDetailList = {
     date: rawNewsDetails.webPublicationDate,
     title: rawNewsDetails.fields.headline,
-    desctiption: rawNewsDetails.fields.trailText,
+    description: rawNewsDetails.fields.trailText,
     image: rawNewsDetails.fields.main,
     content: rawNewsDetails.fields.body,
     author: rawNewsDetails.fields.byline,
