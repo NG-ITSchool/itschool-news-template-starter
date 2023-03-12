@@ -1,3 +1,5 @@
+import { Layout } from "../components/Layout";
+
 export function Favorites() {
-  return <div></div>;
+  return <Layout>Favorite</Layout>;
 }

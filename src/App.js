@@ -1,5 +1,3 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Page404 from "./pages/Page404";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
@@ -14,7 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/category/:categoryId" element={<NewsCategory />} />
-        <Route path="/news/:newsId" element={<NewsDetails />} />
+        <Route path="/news/:newsId/*" element={<NewsDetails />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
