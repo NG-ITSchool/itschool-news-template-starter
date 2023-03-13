@@ -19,7 +19,7 @@ export function Pagination(props) {
   };
 
   return (
-    <div className="d-flex justify-content-centeer mb-5">
+    <div className="d-flex justify-content-center mb-5">
       <BootstrapPagination className={styles.pagination}>
         {[1, 2, 3, 4, 5].map(page => (
           <BootstrapPagination.Item
