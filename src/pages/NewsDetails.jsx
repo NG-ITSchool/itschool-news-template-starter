@@ -22,19 +22,20 @@ export function NewsDetails() {
 
   return (
     <Layout>
-      <Container className={`${styles.newsDetails} text-start`}>
+      <Container className={`${styles.newsDetails} text-start my-5`}>
         <Row>
           <Col xs={12} lg={8} className="mx-auto">
             <h1 className="my-5">{title}</h1>
             <p className="fw-bold">{description}</p>
             <div dangerouslySetInnerHTML={{ __html: image }} className="mb-4" />
-            <div className="d-flex justify-content-between align-items-center">
+            <div className="d-flex justify-content-between align-items-center mb-4">
               <div className="fw-bold">
                 <p>{author}</p>
                 <p>{getFormattedDate(date)}</p>
               </div>
               <Button variant="success">Add to favorites</Button>
             </div>
+            <div dangerouslySetInnerHTML={{ __html: content }} />
           </Col>
         </Row>
       </Container>
