@@ -4,12 +4,12 @@ import { Home } from "./pages/Home";
 import { Favorites } from "./pages/Favorites";
 import { NewsCategory } from "./pages/NewsCategory";
 import { NewsDetails } from "./pages/NewsDetails";
-import { FavoritesContext } from "./store/Favorites/context";
+import { FavoritesProvider } from "./store/Favorites/context";
 
 function App() {
   return (
     <div className="App">
-      <FavoritesContext.Provider value={}>
+      <FavoritesProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
@@ -17,7 +17,7 @@ function App() {
           <Route path="/news/:newsId/*" element={<NewsDetails />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
-      </FavoritesContext.Provider>
+      </FavoritesProvider>
     </div>
   );
 }
