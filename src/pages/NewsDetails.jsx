@@ -5,6 +5,7 @@ import { getNewsDetailsEndpoint } from "../api/endpoints";
 import { useFetch } from "../utils/hooks/useFetch";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import styles from "./NewsDetails.module.css";
+import { getFormattedDate } from "../utils/date";
 
 export function NewsDetails() {
   const params = useParams();
@@ -27,12 +28,12 @@ export function NewsDetails() {
             <h1 className="my-5">{title}</h1>
             <p className="fw-bold">{description}</p>
             <div dangerouslySetInnerHTML={{ __html: image }} className="mb-4" />
-            <div className="d-flex justify-content-between">
-              <div>
-                {author}
-                {date}
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="fw-bold">
+                <p>{author}</p>
+                <p>{getFormattedDate(date)}</p>
               </div>
-              <Button>Add to favorites</Button>
+              <Button variant="success">Add to favorites</Button>
             </div>
           </Col>
         </Row>
