@@ -31,6 +31,7 @@ export function NewsDetails() {
       image: thumbnail,
       title,
       description,
+      hasDeleteButton: true,
     };
 
     const actionResult = addToFavorites(newsItem);
