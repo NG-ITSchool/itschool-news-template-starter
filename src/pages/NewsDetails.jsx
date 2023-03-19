@@ -7,21 +7,31 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import styles from "./NewsDetails.module.css";
 import { getFormattedDate } from "../utils/date";
 import { addToFavorites } from "../store/Favorites/actions";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FavoritesContext } from "../store/Favorites/context";
 import { Notification } from "../components/Notification";
+import { useLocalStorage } from "../utils/hooks/useLocalStorage";
 
 export function NewsDetails() {
   const params = useParams();
   const newsId = params.newsId + "/" + params["*"];
 
-  const { favoritesDispatch } = useContext(FavoritesContext);
+  const { favoritesState, favoritesDispatch } = useContext(FavoritesContext);
 
   const newsDetailsEndpoint = getNewsDetailsEndpoint(newsId);
 
   const newsDetails = useFetch(newsDetailsEndpoint);
 
   const adaptedNewsDetails = getNewsDetails(newsDetails);
+
+  const [_, setLocalStorageState] = useLocalStorage(
+    "favorites",
+    favoritesState
+  );
+
+  useEffect(() => {
+    setLocalStorageState(favoritesState);
+  }, [favoritesState, setLocalStorageState]);
 
   const { title, description, image, date, author, content, thumbnail } =
     adaptedNewsDetails;
