@@ -7,8 +7,9 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import styles from "./NewsDetails.module.css";
 import { getFormattedDate } from "../utils/date";
 import { addToFavorites } from "../store/Favorites/actions";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FavoritesContext } from "../store/Favorites/context";
+import { Notification } from "../components/Notification";
 
 export function NewsDetails() {
   const params = useParams();
@@ -25,7 +26,15 @@ export function NewsDetails() {
   const { title, description, image, date, author, content, thumbnail } =
     adaptedNewsDetails;
 
+  const [list, setList] = useState([]);
   const handleAddToFavorites = () => {
+    const toastProperties = {
+      id: list.length + 1,
+      description: "Added to favorites",
+      backgroundColor: "#198754",
+    };
+    setList([...list, toastProperties]);
+
     const newsItem = {
       id: newsId,
       image: thumbnail,
@@ -55,6 +64,11 @@ export function NewsDetails() {
                 Add to favorites
               </Button>
             </div>
+            <Notification
+              alertlist={list}
+              position="buttom-right"
+              setList={setList}
+            />
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </Col>
         </Row>

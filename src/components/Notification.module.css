@@ -1,0 +1,55 @@
+.container {
+  font-size: 14px;
+  position: fixed;
+  z-index: 10;
+}
+
+.buttom-right {
+  bottom: 1rem;
+  right: 1rem;
+  animation: alert-in-right 0.7s;
+}
+
+.notification {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #999;
+  color: #000;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.notification:hover {
+  box-shadow: 0 0 12px #fff;
+  opacity: 1;
+}
+
+.alert {
+  height: 50px;
+  width: 225px;
+  color: hsl(0, 0%, 100%);
+  padding: 15px 15px 10px 10px;
+}
+
+.container button {
+  float: right;
+  background: none;
+  border: none;
+  color: #ffffff;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.description {
+  margin: 0;
+  text-align: left;
+}
+
+@keyframes alert-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
