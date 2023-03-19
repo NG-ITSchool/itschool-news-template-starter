@@ -47,7 +47,7 @@ function Header() {
                   to="/category/football"
                   className="p-3 text-uppercase text-light"
                 >
-                  Fotbal
+                  Football
                 </Link>
               </li>
               <li className={isDisplayed ? "container" : null}>
@@ -68,7 +68,7 @@ function Header() {
               </li>
               <li className={isDisplayed ? "container" : null}>
                 <Link to="/favorites" className="p-3 text-uppercase text-light">
-                  Favorite
+                  Favorites
                 </Link>
               </li>
             </ul>
