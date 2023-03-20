@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# It school news project.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the final project from my Web Development course that I learned from one
+of the best developer , great person and awesome teacher from @IT School, Gîrbu Nicolae!!!
 
 ## Available Scripts
 
