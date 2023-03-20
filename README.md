@@ -3,9 +3,9 @@
 This is the final project from my Web Development course that I learned from one
 of the best developer , great person and awesome teacher from @IT School, Gîrbu Nicolae!!!
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+The project is deployed at : https://cv-itschool-news.netlify.app/
 
 ### `npm start`
 
