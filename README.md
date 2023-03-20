@@ -5,7 +5,7 @@ of the best developer , great person and awesome teacher from @IT School, Gîrbu
 
 ## Demo
 
-The project is deployed at [cv-itschool-news.netlify.app] (https://cv-itschool-news.netlify.app/).
+The project is deployed at [itschool-news.netlify.app](https://itschool-news.netlify.app).
 
 ### `npm start`
 
